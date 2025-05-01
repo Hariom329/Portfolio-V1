@@ -20,8 +20,8 @@ export default function ContactPage() {
              <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                    <Mail className="h-5 w-5 text-primary" />
-                   <Link href="mailto:hariommishra013@gmail.com" className="text-foreground/90 hover:text-primary transition-colors">
-                    hariommishra013@gmail.com
+                   <Link href="mailto:c29hariommishra@gmail.com" className="text-foreground/90 hover:text-primary transition-colors">
+                    c29hariommishra@gmail.com
                    </Link>
                 </div>
                  <div className="flex items-center gap-3">
