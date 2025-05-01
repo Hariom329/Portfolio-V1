@@ -1,9 +1,10 @@
+
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Code, Briefcase, Home, Menu } from 'lucide-react'; // Added Menu for potential mobile nav
+import { Code, Briefcase, Home, Menu, Mail, FileText } from 'lucide-react'; // Added Menu, Mail, FileText
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -17,6 +18,8 @@ const navItems = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Projects', href: '/projects', icon: Code },
   { name: 'Internships', href: '/internships', icon: Briefcase },
+  { name: 'Case Studies', href: '/case-studies', icon: FileText }, // Added Case Studies
+  { name: 'Contact', href: '/contact', icon: Mail }, // Added Contact
 ];
 
 export function Navbar() {
@@ -30,7 +33,6 @@ export function Navbar() {
       transition={{ type: 'spring', stiffness: 50, delay: 0.2 }}
       className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
-      {/* Added max-w-7xl for constrained width, mx-auto for centering, px for padding */}
       <div className="container mx-auto flex h-14 max-w-7xl items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center space-x-2">
           <span className="font-bold text-primary sm:inline-block">
@@ -38,7 +40,7 @@ export function Navbar() {
           </span>
         </Link>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <nav className="hidden items-center space-x-4 text-sm font-medium md:flex lg:space-x-6">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -64,8 +66,8 @@ export function Navbar() {
                 <Menu className="h-5 w-5 text-foreground/80" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[250px] sm:w-[300px] p-6 bg-background">
-              <nav className="flex flex-col space-y-4 mt-6">
+            <SheetContent side="right" className="w-[250px] bg-background p-6 sm:w-[300px]">
+              <nav className="mt-6 flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
